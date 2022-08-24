@@ -1,0 +1,65 @@
+.fl_col {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.fl_row {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.number_button,
+.oper_button {
+	width: max(10vw, 10vh);
+	height: max(10vw, 10vh);
+	border: 1px solid black;
+	border-radius: 50%;
+	display: inline-block;
+
+}
+
+.number_button span,
+.oper_button span {
+	font-size: max(5vw, 5vh);
+	position: relative;
+	top: 2.5vw;
+	left: 3.7vw;
+
+}
+
+.number_button {
+	background-color: salmon;
+}
+
+.oper_button {
+	background-color: brown;
+}
+
+
+#display,
+#but_part,
+#main {
+	border: 1px solid black;
+	width: clamp(max(50vw, 50vh), max(50vw, 50vh), 95vw);
+	padding: clamp(max(1vw, 1vh), max(1vw, 1vh), 1vw);
+}
+
+#display {
+	height: 3em;
+	background-color: aquamarine;
+}
+
+body {
+	margin: auto;
+	padding: auto;
+}
+
+main {
+	margin: auto;
+	display: inline-block;
+	background-color: bisque;
+}
