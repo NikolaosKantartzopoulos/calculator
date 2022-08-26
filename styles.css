@@ -1,65 +1,117 @@
-.fl_col {
+/*------------------------------------------
+//  DISPLAY SECTION
+--------------------------------------------*/
+#display_section {
+	background-color: black;
+}
+
+#my_screen {
 	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
+	background-color: lightgrey;
+	border: 3px solid black;
+	height: 90%;
+	width: 95%;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	font-size: 200%;
 }
 
-.fl_row {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
+/*------------------------------------------
+  //  CONTROL SECTION
+  --------------------------------------------*/
+#control_section {
+	background-color: royalblue;
+	grid-template: 1fr / 1fr 1fr;
+	border: 3px solid black;
+}
+
+#control_section>div {
+	width: 80%;
+	height: 80%;
+	background-color: chocolate;
+	border: 4px solid saddlebrown;
+	font-size: 180%;
+}
+
+/*------------------------------------------
+  //  BUTTON SECTION
+  --------------------------------------------*/
+#button_section {
+	background-color: royalblue;
+	grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+	border: 3px solid black;
+}
+
+#button_section>div {
+	height: 80%;
+	width: 80%;
+
+}
+
+.but_sec {
+	display: grid;
+	justify-items: center;
 	align-items: center;
+	border-radius: 10%;
+	font-size: 235%;
+	user-select: none;
 }
 
-.number_button,
-.oper_button {
-	width: max(10vw, 10vh);
-	height: max(10vw, 10vh);
-	border: 1px solid black;
-	border-radius: 50%;
-	display: inline-block;
-
+#but-1,
+#but-2,
+#but-3,
+#but-5,
+#but-6,
+#but-7,
+#but-9,
+#but-10,
+#but-11,
+#but-13,
+#but-14,
+#but-15 {
+	background-color: lightgrey;
+	border: 4px solid darkgrey;
 }
 
-.number_button span,
-.oper_button span {
-	font-size: max(5vw, 5vh);
-	position: relative;
-	top: 2.5vw;
-	left: 3.7vw;
-
+#but-4,
+#but-8,
+#but-12,
+#but-16 {
+	background-color: chocolate;
+	border: 4px solid saddlebrown;
 }
 
-.number_button {
-	background-color: salmon;
-}
-
-.oper_button {
-	background-color: brown;
-}
-
-
-#display,
-#but_part,
-#main {
-	border: 1px solid black;
-	width: clamp(max(50vw, 50vh), max(50vw, 50vh), 95vw);
-	padding: clamp(max(1vw, 1vh), max(1vw, 1vh), 1vw);
-}
-
-#display {
-	height: 3em;
-	background-color: aquamarine;
+/*------------------------------------------
+  //  GENERAL
+  --------------------------------------------*/
+* {
+	box-sizing: border-box;
+	user-select: none;
 }
 
 body {
-	margin: auto;
-	padding: auto;
+	background-color: bisque;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template: 1fr/ 1fr;
 }
 
 main {
+	display: grid;
+	grid-template: 1fr 1fr 4fr/ 1fr;
 	margin: auto;
-	display: inline-block;
-	background-color: bisque;
+	border: 1px solid black;
+	height: clamp(300px, 95vh, 1000px);
+}
+
+.grid-center {
+	display: grid;
+	justify-items: center;
+	align-items: center;
 }
