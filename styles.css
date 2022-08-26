@@ -100,6 +100,8 @@ body {
 	justify-items: center;
 	align-items: center;
 	grid-template: 1fr/ 1fr;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
 }
 
 main {
