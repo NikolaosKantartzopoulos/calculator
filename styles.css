@@ -100,8 +100,8 @@ body {
 	justify-items: center;
 	align-items: center;
 	grid-template: 1fr/ 1fr;
-    overflow-x: hidden;
-    overflow-y: scroll !important;
+	overflow-x: hidden;
+	overflow-y: scroll !important;
 }
 
 main {
@@ -109,7 +109,7 @@ main {
 	grid-template: 1fr 1fr 4fr/ 1fr;
 	margin: auto;
 	border: 1px solid black;
-	height: clamp(300px, 95vh, 1000px);
+	height: clamp(500px, 95vh, 600px);
 }
 
 .grid-center {
