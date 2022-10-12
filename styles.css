@@ -3,19 +3,26 @@
 --------------------------------------------*/
 #display_section {
 	background-color: black;
+	width: auto;
+	display: flex;
+	flex-flow: column;
+	margin: 0px;
+	border: 5px solid black;
+	height: 9rem;
 }
 
-#my_screen {
+.screenPart {
 	display: flex;
 	justify-content: end;
 	align-items: center;
 	background-color: lightgrey;
-	border: 3px solid black;
+	border: 1px solid black;
 	height: 90%;
-	width: 95%;
+	width: 100%;
+	padding: 10px;
 	padding-left: 2vw;
 	padding-right: 2vw;
-	font-size: 200%;
+	font-size: 2rem;
 }
 
 /*------------------------------------------
@@ -110,6 +117,7 @@ main {
 	margin: auto;
 	border: 1px solid black;
 	height: clamp(500px, 95vh, 600px);
+	box-shadow: 0px 0px 10px blue;
 }
 
 .grid-center {
