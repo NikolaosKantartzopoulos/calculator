@@ -73,7 +73,10 @@ function pop_character() {
 	my_screen_dom.textContent = my_screen_dom.textContent.slice(0, -1);
 }
 
-function log_button(e) {
+function log_button(e, logged_value) {
+	if (logged_value !== null) {
+		e.key = logged_value;
+	}
 	if (my_screen_dom.textContent.length >= 11) {
 		my_screen_dom.textContent = "***ERROR***";
 	} else if (/\+|\-|\*|\//gi.test(e.key)) {
@@ -135,16 +138,9 @@ function create_clickable_menu(arr) {
 
 		logged_value = arr[i];
 
-		document.getElementById(button_id).addEventListener("click", () => {
-			if (button_id == "but-15") {
-				parse_screen(my_screen_dom.textContent);
-			} else {
-				my_screen_dom.textContent += logged_value;
-				if (my_screen_dom.textContent.length >= 11) {
-					my_screen_dom.textContent = "***ERROR***";
-				}
-			}
-		});
+		document
+			.getElementById(button_id)
+			.addEventListener("click", (e) => log_button(e, logged_value));
 	}
 }
 window.addEventListener("keydown", log_button);
@@ -165,7 +161,7 @@ create_clickable_menu([
 	"-",
 	".",
 	"0",
-	"=",
+	"Enter",
 	"+",
 ]);
 
