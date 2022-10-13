@@ -120,6 +120,9 @@ function log_button(e, logged_value) {
 			secondOperand = null;
 		}
 	} else if (/\d|\./gi.test(e.key)) {
+		if (my_screen_dom.textContent.includes(".") && e.key == ".") {
+			return null;
+		}
 		if (my_screen_dom.textContent[0] == "0") {
 			my_screen_dom.textContent = "";
 		}
@@ -140,7 +143,7 @@ function create_clickable_menu(arr) {
 
 		document
 			.getElementById(button_id)
-			.addEventListener("touchstart", (e) => log_button(e, logged_value));
+			.addEventListener("touch", (e) => log_button(e, logged_value), false);
 
 		document
 			.getElementById(button_id)
