@@ -140,6 +140,10 @@ function create_clickable_menu(arr) {
 
 		document
 			.getElementById(button_id)
+			.addEventListener("touchstart", (e) => log_button(e, logged_value));
+
+		document
+			.getElementById(button_id)
 			.addEventListener("click", (e) => log_button(e, logged_value));
 	}
 }
