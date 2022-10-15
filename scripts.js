@@ -119,12 +119,20 @@ function log_button(e, logged_value) {
 			firstOperand = my_buffer_dom.textContent;
 			secondOperand = null;
 		}
-	} else if (/\d|\./gi.test(e.key)) {
+	} else if (/\d/gi.test(e.key)) {
+		if (
+			my_screen_dom.textContent[0] == "0" &&
+			!my_screen_dom.textContent.includes(".")
+		) {
+			my_screen_dom.textContent = "";
+		}
+		my_screen_dom.textContent += e.key;
+	} else if (/\./gi.test(e.key)) {
 		if (my_screen_dom.textContent.includes(".") && e.key == ".") {
 			return null;
 		}
 		if (my_screen_dom.textContent[0] == "0") {
-			my_screen_dom.textContent = "";
+			my_screen_dom.textContent = "0";
 		}
 		my_screen_dom.textContent += e.key;
 	}
