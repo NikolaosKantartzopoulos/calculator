@@ -29,13 +29,21 @@ function calculate(firstOperand, secondOperand, operation) {
 	my_screen_dom.textContent = "";
 	switch (operation) {
 		case "add":
-			return Number(firstOperand) + Number(secondOperand);
+			return (
+				Math.round((Number(firstOperand) + Number(secondOperand)) * 100) / 100
+			);
 		case "sub":
-			return Number(firstOperand) - Number(secondOperand);
+			return (
+				Math.round((Number(firstOperand) - Number(secondOperand)) * 100) / 100
+			);
 		case "mul":
-			return Number(firstOperand) * Number(secondOperand);
+			return (
+				Math.round(Number(firstOperand) * Number(secondOperand) * 100) / 100
+			);
 		case "div":
-			return Number(firstOperand) / Number(secondOperand);
+			return (
+				Math.round((Number(firstOperand) / Number(secondOperand)) * 100) / 100
+			);
 		default:
 			return null;
 	}
@@ -45,15 +53,19 @@ function selectOperation(pressedKey) {
 	switch (pressedKey) {
 		case "+":
 			console.log("Selected ADD");
+			document.getElementById("operandSelected").textContent = "+  ";
 			return "add";
 		case "-":
 			console.log("Selected SUB");
+			document.getElementById("operandSelected").textContent = "-  ";
 			return "sub";
 		case "*":
 			console.log("Selected MUL");
+			document.getElementById("operandSelected").textContent = "*  ";
 			return "mul";
 		case "/":
 			console.log("Selected DIV");
+			document.getElementById("operandSelected").textContent = "/  ";
 			return "div";
 	}
 }
@@ -106,6 +118,7 @@ function log_button(e, logged_value) {
 	} else if (e.key == "c" || e.key == "C") {
 		clear_screen();
 	} else if (e.key == "Enter") {
+		document.getElementById("operandSelected").textContent = "";
 		if (my_screen_dom.textContent == "") {
 			return null;
 		}
