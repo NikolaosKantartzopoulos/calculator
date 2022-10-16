@@ -78,6 +78,7 @@ function clear_screen() {
 	secondOperand = null;
 	operation = "";
 	operationLoaded = false;
+	document.getElementById("operandSelected").textContent = "";
 	my_buffer_dom.textContent = "...";
 	my_screen_dom.textContent = 0;
 }
@@ -115,6 +116,9 @@ function log_button(e, logged_value) {
 		}
 	} else if (e.key == "Backspace" || e.key == "Delete") {
 		pop_character();
+		if (my_screen_dom.textContent == "") {
+			document.getElementById("operandSelected").textContent = "";
+		}
 	} else if (e.key == "c" || e.key == "C") {
 		clear_screen();
 	} else if (e.key == "Enter") {
